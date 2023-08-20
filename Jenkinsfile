@@ -19,13 +19,6 @@ pipeline{
                 }
             }
         }
-        stage("Stop"){
-            steps{
-                script {
-                    sh 'pm2 stop pia_backend &2> /dev/null'
-                }
-            }
-        }
         stage("Build"){
             steps{
                 script {
@@ -34,17 +27,11 @@ pipeline{
                 }
             }
         }
-        stage("Copy"){
+        stage("Replace files"){
             steps{
                 script {
+                    sh 'rm -rf ~/shared/nginx/api/*'
                     sh 'cp -r ./dist/* ~/shared/nginx/api'
-                }
-            }
-        }
-        stage("Start"){
-            steps{
-                script {
-                    sh 'pm2 start ~/shared/nginx/api/main.js --name=pia_backend'
                 }
             }
         }
