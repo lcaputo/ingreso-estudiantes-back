@@ -22,7 +22,7 @@ pipeline{
         stage("Stop"){
             steps{
                 script {
-                    sh 'pm2 stop pia_backend 2> /dev/null'
+                    sh 'pm2 stop pia_backend &2> /dev/null'
                 }
             }
         }
