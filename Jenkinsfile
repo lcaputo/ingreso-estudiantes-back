@@ -33,8 +33,8 @@ pipeline{
         stage("Replace files"){
             steps{
                 script {
-                    sh 'rm -rf ~/home/api/*'
-                    sh 'cp -r ./dist/* ~/home/api/'
+                    sh 'rm -rf ~/home/*'
+                    sh 'cp -r ./dist/* ~/home/'
                 }
             }
         }
