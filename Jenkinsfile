@@ -34,7 +34,7 @@ pipeline{
             steps{
                 script {
                     sh 'rm -rf ~/shared/nginx/api/*'
-                    sh 'cp -r ./dist/* ~/shared/nginx/api'
+                    sh 'cp -r ./dist/* ~/shared/nginx/api/'
                 }
             }
         }
