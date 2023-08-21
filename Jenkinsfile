@@ -34,7 +34,7 @@ pipeline{
             steps{
                 script {
                     sh 'rm -rf ~/home/*'
-                    sh 'cp -r ./dist/* ~/home/'
+                    sh 'cp -r ./dist/* /home/'
                 }
             }
         }
