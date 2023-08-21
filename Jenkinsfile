@@ -33,7 +33,7 @@ pipeline{
         stage("Replace files"){
             steps{
                 script {
-                    sh 'rm -rf ~/home/*'
+                    sh 'rm -rf /home/* !(node_modules)'
                     sh 'cp -r ./dist/* /home/'
                 }
             }
