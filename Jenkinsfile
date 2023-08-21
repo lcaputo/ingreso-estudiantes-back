@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    tools {
+        nodejs '18.17.1'
+    }
     environment {
         DB_HOST = credentials('DB_HOST')
         DB_PORT = credentials('DB_PORT')
